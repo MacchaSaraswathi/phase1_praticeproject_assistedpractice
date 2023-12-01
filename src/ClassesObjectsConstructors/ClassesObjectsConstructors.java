@@ -1,42 +1,44 @@
 package ClassesObjectsConstructors;
 
-public class ClassesObjectsConstructors {
-	class Lamp {
-		  
-		  // stores the value for light
-		  // true if light is on
-		  // false if light is off
-		  boolean isOn;
+public class ClassesObjectsConstructors { 
+	
+	  // Custom class inheriting from Object implicitly
+    static class MyClass {
+        private int value;
 
-		  // method to turn on the light
-		  void turnOn() {
-		    isOn = true;
-		    System.out.println("Light on? " + isOn);
+        // Constructor
+        public MyClass(int value) {
+            this.value = value;
+        }
 
-		  }
+        // Custom method
+        public void display() {
+            System.out.println("Value: " + value);
+        }
+    }
 
-		  // method to turnoff the light
-		  void turnOff() {
-		    isOn = false;
-		    System.out.println("Light on? " + isOn);
-		  }
-		}
+    public static void main(String[] args) {
+        // Creating an object of the custom class
+        MyClass myObject = new MyClass(42);
 
-		class Main {
-		  public static void main(String[] args) {
+        // Using the custom method
+        myObject.display();
 
-		    // create objects led and halogen
-		    Lamp led = new Lamp();
-		    Lamp halogen = new Lamp();
+        // Accessing Object class methods
+        // toString() method
+        System.out.println("Object class toString(): " + myObject.toString());
 
-		    // turn on the light by
-		    // calling method turnOn()
-		    led.turnOn();
+        // hashCode() method
+        System.out.println("Object class hashCode(): " + myObject.hashCode());
 
-		    // turn off the light by
-		    // calling method turnOff()
-		    halogen.turnOff();
-		  }
-		}
+        // getClass() method
+        System.out.println("Object class getClass(): " + myObject.getClass());
 
+        // equals() method
+        MyClass anotherObject = new MyClass(42);
+        System.out.println("Object class equals(): " + myObject.equals(anotherObject));
+    }
 }
+
+	
+	
